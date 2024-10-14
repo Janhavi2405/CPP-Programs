@@ -1,0 +1,73 @@
+#include <iostream>
+#include <string>
+class Drone {
+public:
+    void takeOff() {
+        std::cout << "Drone is taking off...\n";
+        // Implement motor control logic here
+    }
+
+    void land() {
+        std::cout << "Drone is landing...\n";
+    }
+ void moveForward() {
+        std::cout << "Drone is moving forward...\n";
+}
+void moveBackward() {
+        std::cout << "Drone is moving backward...\n";
+   }
+ void turnLeft() {
+        std::cout << "Drone is turning left...\n";
+    }
+ void turnRight() {
+        std::cout << "Drone is turning right...\n";
+    }
+};
+void displayMenu() {
+    std::cout << "Drone Controller\n";
+    std::cout << "1. Take Off\n";
+    std::cout << "2. Land\n";
+    std::cout << "3. Move Forward\n";
+    std::cout << "4. Move Backward\n";
+    std::cout << "5. Turn Left\n";
+    std::cout << "6. Turn Right\n";
+    std::cout << "7. Exit\n";
+}
+int main() {
+    Drone myDrone;
+    int choice;
+
+    while (true) {
+        displayMenu();
+        std::cout << "Enter your choice: ";
+        std::cin >> choice;
+
+        switch (choice) {
+            case 1:
+                myDrone.takeOff();
+                break;
+            case 2:
+                myDrone.land();
+                break;
+            case 3:
+                myDrone.moveForward();
+                break;
+            case 4:
+                myDrone.moveBackward();
+                break;
+            case 5:
+                myDrone.turnLeft();
+                break;
+            case 6:
+                myDrone.turnRight();
+                break;
+            case 7:
+                std::cout << "Exiting...\n";
+                return 0;
+            default:
+                std::cout << "Invalid choice, please try again.\n";
+                break;
+        }
+    }
+return 0;
+}
